@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/font/Conviction.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Home.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 80
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "tap"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Center/VBox/Tap:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 7.99999, 4.28709 ),
+"update": 0,
+"values": [ Vector2( 1, 1.5 ), Vector2( 1, 1 ) ]
+}
+
+[node name="Home" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.027451, 0.145098, 0.176471, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Center" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="Center"]
+margin_left = 459.0
+margin_top = 234.0
+margin_right = 564.0
+margin_bottom = 366.0
+
+[node name="Tap" type="Label" parent="Center/VBox"]
+margin_right = 105.0
+margin_bottom = 85.0
+rect_pivot_offset = Vector2( 0, 70 )
+custom_fonts/font = SubResource( 1 )
+text = "Tap"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Count" type="Label" parent="Center/VBox"]
+margin_top = 89.0
+margin_right = 105.0
+margin_bottom = 132.0
+custom_fonts/font = SubResource( 2 )
+text = "0000"
+align = 1
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+anims/tap = SubResource( 3 )
