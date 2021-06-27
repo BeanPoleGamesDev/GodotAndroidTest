@@ -8,7 +8,6 @@ onready var anim = $Anim
 
 
 func _input(event):
-	print(event)
 	match event.get_class():
 		'InputEventScreenTouch':
 			set_taps(taps + 1)

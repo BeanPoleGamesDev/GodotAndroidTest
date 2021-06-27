@@ -51,9 +51,9 @@ __meta__ = {
 }
 
 [node name="VBox" type="VBoxContainer" parent="Center"]
-margin_left = 459.0
+margin_left = 247.0
 margin_top = 234.0
-margin_right = 564.0
+margin_right = 352.0
 margin_bottom = 366.0
 
 [node name="Tap" type="Label" parent="Center/VBox"]
